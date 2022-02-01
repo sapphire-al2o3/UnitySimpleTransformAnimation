@@ -16,9 +16,17 @@ public class SimpleScalingAnimation : MonoBehaviour
 	[SerializeField]
 	float duration = 1.0f;
 
+	[SerializeField]
+	float offset = 0.0f;
+
 	float _time;
 
-    void Update()
+	void Awake()
+	{
+		_time += offset;
+	}
+
+	void Update()
     {
 		float time = (_time / duration);
 		float t = curve.Evaluate(time);
