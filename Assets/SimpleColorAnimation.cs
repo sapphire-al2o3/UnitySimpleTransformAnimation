@@ -24,11 +24,14 @@ public class SimpleColorAnimation : MonoBehaviour
 
 	float _time;
 	
-	MaterialPropertyBlock _mpb;
+	static MaterialPropertyBlock _mpb;
 
 	void Awake()
 	{
-		_mpb = new MaterialPropertyBlock();
+		if (_mpb == null)
+		{
+			_mpb = new MaterialPropertyBlock();
+		}
 		_time += offset;
 	}
 
