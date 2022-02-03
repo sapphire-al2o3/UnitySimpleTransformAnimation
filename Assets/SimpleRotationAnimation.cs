@@ -5,10 +5,10 @@ using UnityEngine;
 public class SimpleRotationAnimation : MonoBehaviour
 {
 	[SerializeField]
-	Vector3 start = new Vector3(1.0f, 1.0f, 1.0f);
+	Vector3 start = new Vector3(0.0f, 0.0f, 0.0f);
 
 	[SerializeField]
-	Vector3 end = new Vector3(1.0f, 1.0f, 1.0f);
+	Vector3 end = new Vector3(0.0f, 0.0f, 0.0f);
 
 	[SerializeField]
 	AnimationCurve curve;
