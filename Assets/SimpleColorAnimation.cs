@@ -25,6 +25,7 @@ public class SimpleColorAnimation : MonoBehaviour
 	float _time;
 	
 	static MaterialPropertyBlock _mpb;
+	static int _colorID;
 
 	void Awake()
 	{
@@ -32,14 +33,15 @@ public class SimpleColorAnimation : MonoBehaviour
 		{
 			_mpb = new MaterialPropertyBlock();
 		}
+		_colorID = Shader.PropertyToID("_Color");
 		_time += offset;
 	}
 
 	void Update()
 	{
-		float time = (_time / duration);
+		float time = _time / duration;
 		float t = curve.Evaluate(time);
-		_mpb.SetColor("_Color", Color.Lerp(start, end, t));
+		_mpb.SetColor(_colorID, Color.Lerp(start, end, t));
 
 		_renderer.SetPropertyBlock(_mpb);
 
