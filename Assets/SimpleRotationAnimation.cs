@@ -28,7 +28,7 @@ public class SimpleRotationAnimation : MonoBehaviour
 
 	void Update()
 	{
-		float time = (_time / duration);
+		float time = _time / duration;
 		float t = curve.Evaluate(time);
 		var euler = Vector3.Lerp(start, end, t);
 		transform.localRotation = Quaternion.Euler(euler);

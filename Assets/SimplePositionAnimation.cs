@@ -28,7 +28,7 @@ public class SimplePositionAnimation : MonoBehaviour
 
 	void Update()
 	{
-		float time = (_time / duration);
+		float time = _time / duration;
 		float t = curve.Evaluate(time);
 		transform.localPosition = Vector3.Lerp(start, end, t);
 

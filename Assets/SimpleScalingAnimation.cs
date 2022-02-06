@@ -28,7 +28,7 @@ public class SimpleScalingAnimation : MonoBehaviour
 
 	void Update()
     {
-		float time = (_time / duration);
+		float time = _time / duration;
 		float t = curve.Evaluate(time);
 		transform.localScale = Vector3.Lerp(start, end, t);
 
