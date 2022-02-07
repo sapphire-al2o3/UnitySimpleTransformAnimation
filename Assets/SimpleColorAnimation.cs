@@ -20,7 +20,7 @@ public class SimpleColorAnimation : MonoBehaviour
 	float offset = 0.0f;
 
 	[SerializeField]
-	Renderer _renderer;
+	Renderer renderer;
 
 	float _time;
 	
@@ -43,7 +43,7 @@ public class SimpleColorAnimation : MonoBehaviour
 		float t = curve.Evaluate(time);
 		_mpb.SetColor(_colorID, Color.Lerp(start, end, t));
 
-		_renderer.SetPropertyBlock(_mpb);
+		renderer.SetPropertyBlock(_mpb);
 
 		_time += Time.deltaTime;
 
