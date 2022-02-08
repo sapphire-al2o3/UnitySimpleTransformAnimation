@@ -11,6 +11,7 @@ public class TestSimpleColorAnimationGroup : MonoBehaviour
 	{
 		var animGroup = GetComponent<SimpleColorAnimationGroup>();
 		Renderer[] renderers = new Renderer[num];
+		float[] offsets = new float[num];
 
 		for (int i = 0; i < num; i++)
 		{
@@ -20,8 +21,11 @@ public class TestSimpleColorAnimationGroup : MonoBehaviour
 			cube.transform.SetParent(transform);
 			cube.transform.localPosition = new Vector3(x, 0.0f, z);
 			renderers[i] = cube.GetComponent<Renderer>();
+			offsets[i] = (float)i / num;
 		}
 
-		animGroup._renderers = renderers;
-    }
+		animGroup.renderers = renderers;
+		animGroup.offsets = offsets;
+
+	}
 }

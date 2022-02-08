@@ -17,10 +17,10 @@ public class SimpleColorAnimationGroup : MonoBehaviour
 	float duration = 1.0f;
 
 	[SerializeField]
-	float offset = 0.0f;
+	public float[] offsets;
 
 	[SerializeField]
-	public Renderer[] _renderers;
+	public Renderer[] renderers;
 
 	float _time;
 
@@ -34,17 +34,21 @@ public class SimpleColorAnimationGroup : MonoBehaviour
 			_mpb = new MaterialPropertyBlock();
 		}
 		_colorID = Shader.PropertyToID("_Color");
-		_time += offset;
 	}
 
 	void Update()
 	{
-		float time = _time / duration;
-		float t = curve.Evaluate(time);
-		_mpb.SetColor(_colorID, Color.Lerp(start, end, t));
-
-		foreach (var renderer in _renderers)
+		for (int i = 0; i < renderers.Length; i++)
 		{
+			var renderer = renderers[i];
+			float time = _time + (offsets != null ? offsets[i] : 0.0f);
+			if (time > duration * 2.0f)
+			{
+				time -= duration * 2.0f;
+			}
+			float t = curve.Evaluate(time / duration);
+			_mpb.SetColor(_colorID, Color.Lerp(start, end, t));
+
 			renderer.SetPropertyBlock(_mpb);
 		}
 
