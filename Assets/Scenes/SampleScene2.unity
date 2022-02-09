@@ -283,11 +283,11 @@ MonoBehaviour:
       inWeight: 0
       outWeight: 0
     m_PreInfinity: 2
-    m_PostInfinity: 0
+    m_PostInfinity: 2
     m_RotationOrder: 4
   duration: 1
-  offset: 0
-  _renderers: []
+  offsets: []
+  renderers: []
 --- !u!4 &1312618283
 Transform:
   m_ObjectHideFlags: 0
