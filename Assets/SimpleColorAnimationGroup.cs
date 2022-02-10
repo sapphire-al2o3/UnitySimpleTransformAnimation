@@ -23,7 +23,7 @@ public class SimpleColorAnimationGroup : MonoBehaviour
 	public Renderer[] renderers;
 
 	[SerializeField]
-	public string colorPropertyName = "_Color";
+	string colorPropertyName = "_Color";
 
 	float _time;
 
