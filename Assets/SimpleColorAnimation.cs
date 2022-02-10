@@ -24,9 +24,9 @@ public class SimpleColorAnimation : MonoBehaviour
 
 	Renderer _renderer;
 	float _time;
-	
+	int _colorID;
+
 	static MaterialPropertyBlock _mpb;
-	static int _colorID;
 
 	void Awake()
 	{

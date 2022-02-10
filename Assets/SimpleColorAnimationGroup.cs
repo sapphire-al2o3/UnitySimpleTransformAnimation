@@ -26,9 +26,9 @@ public class SimpleColorAnimationGroup : MonoBehaviour
 	string colorPropertyName = "_Color";
 
 	float _time;
+	int _colorID;
 
 	static MaterialPropertyBlock _mpb;
-	static int _colorID;
 
 	void Awake()
 	{
