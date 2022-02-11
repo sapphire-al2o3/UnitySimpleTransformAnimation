@@ -6,6 +6,8 @@
 [Ll]ogs/
 [Uu]serSettings/
 Assets/AssetStoreTools*
+Recordings/
+MemoryCaptures/
 
 # Visual Studio cache directory
 .vs/
@@ -38,5 +40,3 @@ sysinfo.txt
 # Builds
 *.apk
 *.unitypackage
-
-Recordings/
