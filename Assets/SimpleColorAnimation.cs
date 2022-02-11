@@ -20,7 +20,7 @@ public class SimpleColorAnimation : MonoBehaviour
 	float offset = 0.0f;
 
 	[SerializeField]
-	string colorPropertyName = "_Color";
+	string colorPropertyName = null;
 
 	Renderer _renderer;
 	float _time;
@@ -34,18 +34,27 @@ public class SimpleColorAnimation : MonoBehaviour
 		{
 			_mpb = new MaterialPropertyBlock();
 		}
+		if (string.IsNullOrEmpty(colorPropertyName))
+		{
+			colorPropertyName = "_Color";
+		}
 		_colorID = Shader.PropertyToID(colorPropertyName);
 		_renderer = GetComponent<Renderer>();
 		_time += offset;
 	}
 
+	public void Evaluate(float t)
+	{
+		float v = curve.Evaluate(t);
+		_mpb.SetColor(_colorID, Color.Lerp(start, end, v));
+
+		_renderer.SetPropertyBlock(_mpb);
+	}
+
 	void Update()
 	{
 		float time = _time / duration;
-		float t = curve.Evaluate(time);
-		_mpb.SetColor(_colorID, Color.Lerp(start, end, t));
-
-		_renderer.SetPropertyBlock(_mpb);
+		Evaluate(time);
 
 		_time += Time.deltaTime;
 
