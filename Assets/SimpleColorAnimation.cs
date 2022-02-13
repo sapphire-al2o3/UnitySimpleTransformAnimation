@@ -20,7 +20,7 @@ public class SimpleColorAnimation : MonoBehaviour
 	float offset = 0.0f;
 
 	[SerializeField]
-	string colorPropertyName = null;
+	string colorPropertyName;
 
 	Renderer _renderer;
 	float _time;

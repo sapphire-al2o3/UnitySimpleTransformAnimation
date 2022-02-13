@@ -23,7 +23,7 @@ public class SimpleColorAnimationGroup : MonoBehaviour
 	public Renderer[] renderers;
 
 	[SerializeField]
-	string colorPropertyName = "_Color";
+	string colorPropertyName;
 
 	float _time;
 	int _colorID;
@@ -35,6 +35,10 @@ public class SimpleColorAnimationGroup : MonoBehaviour
 		if (_mpb == null)
 		{
 			_mpb = new MaterialPropertyBlock();
+		}
+		if (string.IsNullOrEmpty(colorPropertyName))
+		{
+			colorPropertyName = "_Color";
 		}
 		_colorID = Shader.PropertyToID(colorPropertyName);
 	}
