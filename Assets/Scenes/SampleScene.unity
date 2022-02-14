@@ -548,7 +548,7 @@ MonoBehaviour:
     m_RotationOrder: 4
   duration: 1
   offset: 0.2
-  colorPropertyName: _Color
+  colorPropertyName: 
 --- !u!23 &326989052
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1893,7 +1893,7 @@ MonoBehaviour:
     m_RotationOrder: 4
   duration: 1
   offset: 0.4
-  colorPropertyName: _Color
+  colorPropertyName: 
 --- !u!23 &1530013882
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2016,7 +2016,7 @@ MonoBehaviour:
     m_RotationOrder: 4
   duration: 1
   offset: 0.6
-  colorPropertyName: _Color
+  colorPropertyName: 
 --- !u!23 &1604994507
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2261,7 +2261,7 @@ MonoBehaviour:
     m_RotationOrder: 4
   duration: 1
   offset: 0.8
-  colorPropertyName: _Color
+  colorPropertyName: 
 --- !u!23 &1633565967
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2820,7 +2820,7 @@ MonoBehaviour:
     m_RotationOrder: 4
   duration: 1
   offset: 0
-  colorPropertyName: _Color
+  colorPropertyName: 
 --- !u!23 &2122821293
 MeshRenderer:
   m_ObjectHideFlags: 0
