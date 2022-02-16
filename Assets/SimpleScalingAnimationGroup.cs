@@ -22,26 +22,7 @@ public class SimpleScalingAnimationGroup : MonoBehaviour
 	[SerializeField]
 	public Transform[] transforms;
 
-	[SerializeField]
-	string colorPropertyName;
-
 	float _time;
-	int _colorID;
-
-	static MaterialPropertyBlock _mpb;
-
-	void Awake()
-	{
-		if (_mpb == null)
-		{
-			_mpb = new MaterialPropertyBlock();
-		}
-		if (string.IsNullOrEmpty(colorPropertyName))
-		{
-			colorPropertyName = "_Color";
-		}
-		_colorID = Shader.PropertyToID(colorPropertyName);
-	}
 
 	void Update()
 	{
