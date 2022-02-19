@@ -36,7 +36,7 @@ public class SimpleRotationAnimationGroup : MonoBehaviour
 			}
 			float t = curve.Evaluate(time / duration);
 			var euler = Vector3.Lerp(start, end, t);
-			transform.localRotation = Quaternion.Euler(euler);
+			trans.localRotation = Quaternion.Euler(euler);
 		}
 
 		_time += Time.deltaTime;
