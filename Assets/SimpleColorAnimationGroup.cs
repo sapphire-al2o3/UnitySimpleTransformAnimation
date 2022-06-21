@@ -45,10 +45,15 @@ public class SimpleColorAnimationGroup : MonoBehaviour
 
 	void Update()
 	{
+		if (renderers == null)
+		{
+			return;
+		}
+
 		for (int i = 0; i < renderers.Length; i++)
 		{
 			var renderer = renderers[i];
-			float time = _time + (offsets != null ? offsets[i] : 0.0f);
+			float time = _time + (offsets != null && offsets.Length > i ? offsets[i] : 0.0f);
 			if (time > duration * 2.0f)
 			{
 				time -= duration * 2.0f;
